@@ -27,3 +27,126 @@ body {
 
   min-height: 100vh;
 }
+.price-grid {
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px $grayish-blue;
+  display: grid;
+  grid-template-areas:
+    'description description'
+    'subscription why';
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 64rem;
+  overflow: hidden;
+
+  &__description {
+    background-color: #fff;
+    grid-area: description;
+    padding: 4rem;
+    .description {
+      &__title {
+        color: $cyan;
+        @include font-style(2.3rem, 700);
+        margin-bottom: 2rem;
+      }
+      &__sub-title {
+        color: $bright-yellow;
+        @include font-style(1.8rem, 700);
+        margin-bottom: 1rem;
+      }
+      &__paragraph {
+        color: $grayish-blue;
+        @include font-style();
+      }
+    }
+  }
+  &__subscription {
+    background-color: $cyan;
+    color: #fff;
+    grid-area: subscription;
+    padding: 4rem;
+    .subscription {
+      &__title {
+        @include font-style(1.8rem, 700);
+        margin-bottom: 2rem;
+      }
+      &__price {
+        @include font-style(2.8rem, 700);
+        span {
+          color: $light-gray;
+          @include font-style();
+          margin-left: 1rem;
+          opacity: 0.6;
+        }
+      }
+      &__description {
+        @include font-style();
+        margin-bottom: 3rem;
+      }
+      &__button {
+        background-color: $bright-yellow;
+        border: none;
+        border-radius: 1rem;
+        color: #fff;
+        @include font-style(1.6rem, 700);
+        padding: 2rem 9rem;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+  &__why {
+    background-color: #4abebd;
+    color: #fff;
+    grid-area: why;
+    padding: 4rem 10rem 4rem 4rem;
+    .why {
+      &__title {
+        @include font-style(1.8rem, 700);
+        margin-bottom: 1.5rem;
+      }
+      &__list {
+        display: flex;
+        @include font-style(1.3rem, 400);
+        flex-direction: column;
+        gap: 4px;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .price-grid {
+    grid-template-areas:
+      'description'
+      'subscription'
+      'why';
+    grid-template-columns: 1fr;
+    margin: 2rem;
+    min-width: 31rem;
+    &__description {
+      background-color: #fff;
+      grid-area: description;
+      padding: 2.5rem 3.5rem;
+      .description {
+        &__sub-title {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    &__subscription {
+      padding: 2.5rem 3rem;
+    }
+    &__why {
+      background-color: #4abebd;
+      color: #fff;
+      grid-area: why;
+      padding: 2.5rem 11rem 2.5rem 2.5rem;
+      .why {
+        &__list {
+          gap: 2px;
+        }
+      }
+    }
+  }
+}

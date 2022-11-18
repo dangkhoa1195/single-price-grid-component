@@ -15,4 +15,122 @@ body {
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.price-grid {
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px hsl(218deg, 22%, 67%);
+  display: grid;
+  grid-template-areas: "description description" "subscription why";
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 64rem;
+  overflow: hidden;
+}
+.price-grid__description {
+  background-color: #fff;
+  grid-area: description;
+  padding: 4rem;
+}
+.price-grid__description .description__title {
+  color: hsl(179deg, 62%, 43%);
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.price-grid__description .description__sub-title {
+  color: hsl(71deg, 73%, 54%);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.price-grid__description .description__paragraph {
+  color: hsl(218deg, 22%, 67%);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.price-grid__subscription {
+  background-color: hsl(179deg, 62%, 43%);
+  color: #fff;
+  grid-area: subscription;
+  padding: 4rem;
+}
+.price-grid__subscription .subscription__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.price-grid__subscription .subscription__price {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+.price-grid__subscription .subscription__price span {
+  color: hsl(204deg, 43%, 93%);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-left: 1rem;
+  opacity: 0.6;
+}
+.price-grid__subscription .subscription__description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+.price-grid__subscription .subscription__button {
+  background-color: hsl(71deg, 73%, 54%);
+  border: none;
+  border-radius: 1rem;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 2rem 9rem;
+  text-align: center;
+  width: 100%;
+}
+.price-grid__why {
+  background-color: #4abebd;
+  color: #fff;
+  grid-area: why;
+  padding: 4rem 10rem 4rem 4rem;
+}
+.price-grid__why .why__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.price-grid__why .why__list {
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 400;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 575px) {
+  .price-grid {
+    grid-template-areas: "description" "subscription" "why";
+    grid-template-columns: 1fr;
+    margin: 2rem;
+    min-width: 31rem;
+  }
+  .price-grid__description {
+    background-color: #fff;
+    grid-area: description;
+    padding: 2.5rem 3.5rem;
+  }
+  .price-grid__description .description__sub-title {
+    margin-bottom: 2rem;
+  }
+  .price-grid__subscription {
+    padding: 2.5rem 3rem;
+  }
+  .price-grid__why {
+    background-color: #4abebd;
+    color: #fff;
+    grid-area: why;
+    padding: 2.5rem 11rem 2.5rem 2.5rem;
+  }
+  .price-grid__why .why__list {
+    gap: 2px;
+  }
 }/*# sourceMappingURL=style.css.map */
