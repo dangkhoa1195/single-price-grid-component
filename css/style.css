@@ -86,6 +86,12 @@ body {
   text-align: center;
   width: 100%;
 }
+.price-grid__subscription .subscription__button:hover {
+  background-color: #fff;
+  color: hsl(71deg, 73%, 54%);
+  cursor: pointer;
+  transition: 0.5s;
+}
 .price-grid__why {
   background-color: #4abebd;
   color: #fff;
